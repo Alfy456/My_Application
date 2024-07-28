@@ -19,6 +19,13 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        //set the location for database schema generation json files
+        kapt{
+            arguments {
+                arg("room.schemaLocation","$projectDir/schemas")
+            }
+        }
     }
 
     buildTypes {
@@ -46,16 +53,16 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.13.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    val lifecycleVersion = "2.7.0"
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+    val lifecycleVersion = "2.8.4"
 
     // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
@@ -67,8 +74,8 @@ dependencies {
 
     implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0")
 
-    implementation ("androidx.activity:activity-ktx:1.9.0")
-    implementation ("androidx.fragment:fragment-ktx:1.6.2")
+    implementation ("androidx.activity:activity-ktx:1.9.1")
+    implementation ("androidx.fragment:fragment-ktx:1.8.2")
 
     val navVersion = "2.7.7"
 
@@ -79,9 +86,6 @@ dependencies {
     // Kotlin
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
-
-    //Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
 
     // Room
     val roomVersion = "2.6.1"
@@ -94,6 +98,13 @@ dependencies {
     // Flow (Kotlin Coroutines)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
+
+    //retrofit
+    val retrofitVersion = "2.11.0"
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
 
 
 }
