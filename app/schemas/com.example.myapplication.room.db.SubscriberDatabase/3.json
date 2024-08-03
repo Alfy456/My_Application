@@ -1,0 +1,59 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "fa1761daa86bac0675227aa5f4a80306",
+    "entities": [
+      {
+        "tableName": "subscriber_db",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`subscriber_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `subscriber_name` TEXT NOT NULL, `subscriber_email` TEXT NOT NULL, `subscriber_number` TEXT NOT NULL DEFAULT 'No Number', `subscriber_address` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "subscriber_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "subscriber_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "subscriber_email",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "phoneNumber",
+            "columnName": "subscriber_number",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'No Number'"
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "subscriber_address",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "subscriber_id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fa1761daa86bac0675227aa5f4a80306')"
+    ]
+  }
+}
