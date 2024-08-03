@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.myapplication"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -26,6 +26,7 @@ android {
                 arg("room.schemaLocation","$projectDir/schemas")
             }
         }
+
     }
 
     buildTypes {
@@ -104,6 +105,14 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    //work manager
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+
+    //Dagger2
+    implementation ("com.google.dagger:dagger:2.51")
+    kapt ("com.google.dagger:dagger-compiler:2.51")
+    //implementation ("javax.annotation:javax.annotation-api:1.3.2")
 
 
 

@@ -48,6 +48,8 @@ class RetrofitActivity : AppCompatActivity(){
                             " "+ "User Id : ${albumsItem.userId}"+"\n\n\n"
 
                     binding.txtItems.append(result)
+
+
                 }
 
             }
